@@ -20,6 +20,8 @@ import java.io.File;
 public class Main extends Application {
     private static final SessionFactory ourSessionFactory;
 
+    // main class
+
     static {
         try {
             Configuration configuration = new Configuration();
@@ -28,7 +30,7 @@ public class Main extends Application {
         } catch (Throwable ex) {
             String[] s = new String[]{};
             main(s);
-         //   FieldValues.LogError(ex);
+            //   FieldValues.LogError(ex);
             throw new ExceptionInInitializerError(ex);
         }
     }
