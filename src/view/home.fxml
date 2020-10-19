@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane fx:id="home_borderPane" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Home">
+    <left>
+        <AnchorPane fx:id="secondAnchorBar" BorderPane.alignment="TOP_LEFT">
+            <children>
+                <VBox fx:id="taskListVbox" layoutX="29.0" layoutY="29.0" style="-fx-background-color: #2E86C1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <JFXButton fx:id="dashboardButton" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#openDashboard" prefWidth="200.0" ripplerFill="#52aad900" style="-fx-background-color: #5DADE2;" text="DashBoard " textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="15.0" />
+                            </VBox.margin>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21278a" fontSmoothingType="LCD" glyphName="DASHBOARD" size="18" />
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="posButton" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#openPos" prefWidth="200.0" ripplerFill="#55aad900" style="-fx-background-color: #5DADE2;" styleClass="nav-button" text="Sale" textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21618c" glyphName="SHOPPING_BASKET" size="18" />
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="sellesReportButton" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#openReport" prefWidth="200.0" ripplerFill="BLACK" style="-fx-background-color: #5DADE2;" styleClass="nav-button" text="Sales Report" textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21618c" glyphName="LIST_ALT" size="18" />
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="purchaseReportButton" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" layoutX="10.0" layoutY="133.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#openPerchasedReport" prefWidth="200.0" ripplerFill="BLACK" style="-fx-background-color: #5DADE2;" styleClass="nav-button" text="Purchased Report" textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21618c" glyphName="LIST_ALT" size="18" />
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="despenceProductButton" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#despenceProductButton" prefWidth="200.0" ripplerFill="BLACK" style="-fx-background-color: #5DADE2;" styleClass="nav-button" text="Despence Product" textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21618c" glyphName="SHOPPING_CART" size="18" />
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="storeProductButton" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#storeProductButton" prefWidth="200.0" ripplerFill="BLACK" style="-fx-background-color: #5DADE2;" styleClass="nav-button" text="Store Product" textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21618c" glyphName="SHOPPING_CART" size="18" />
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="totalProductButton" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#totalProductButton" prefWidth="200.0" ripplerFill="BLACK" style="-fx-background-color: #5DADE2;" styleClass="nav-button" text="Total Product" textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21618c" glyphName="SHOPPING_CART" size="18" />
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="productTypeButton" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#productType" prefWidth="200.0" ripplerFill="BLACK" style="-fx-background-color: #5DADE2;" styleClass="nav-button" text="Product Type" textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21618c" glyphName="LIST_ALT" size="18" />
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="supplierButton" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#opensupplier" prefWidth="200.0" ripplerFill="BLACK" style="-fx-background-color: #5DADE2;" styleClass="nav-button" text="Supplier " textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21618c" glyphName="USERS" size="18" />
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="customerButton" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#openCustomer" prefWidth="200.0" ripplerFill="BLACK" style="-fx-background-color: #5DADE2;" styleClass="nav-button" text="Customer" textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21618c" glyphName="USERS" size="18" />
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="brockerButton" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#openBrocker" prefWidth="200.0" ripplerFill="BLACK" style="-fx-background-color: #5DADE2;" styleClass="nav-button" text="Broker" textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21618c" glyphName="USERS" size="18" />
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="userManagment" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#openUserManagment" prefWidth="200.0" ripplerFill="BLACK" style="-fx-background-color: #5DADE2;" styleClass="nav-button" text="User managment" textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21618c" glyphName="USER" size="18" />
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="SettingButton" alignment="TOP_LEFT" buttonType="RAISED" graphicTextGap="12.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#openSetting" prefWidth="200.0" ripplerFill="BLACK" style="-fx-background-color: #5DADE2;" styleClass="nav-button" text="Setting" textFill="#fffdfd">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="3.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <FontAwesomeIconView fill="#21618c" glyphName="GEAR" size="20" />
+                            </graphic>
+                        </JFXButton>
+                        <Hyperlink alignment="CENTER" text="Contact and help" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Hyperlink>
+                    </children>
+                    <effect>
+                        <DropShadow color="#2c6b6f" height="89.2" radius="29.275" width="29.9" />
+                    </effect>
+                    <padding>
+                        <Insets left="5.0" right="5.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </left>
+    <top>
+        <JFXToolbar fx:id="jfxtoolbar" minWidth="600.0" prefHeight="85.0" style="-fx-min-height: 70; -fx-background-color: #2E86C1;">
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+            <right>
+                <HBox alignment="TOP_RIGHT" spacing="10.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Text fx:id="userLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+                            <HBox.margin>
+                                <Insets top="10.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                        <JFXButton fx:id="userPic" contentDisplay="CENTER" onAction="#userPicClicked" style="-fx-border-width: 0.5; -fx-border-color: #34495E; -fx-border-radius: 20; -fx-background-radius: 20;" text=".">
+                            <graphic>
+                                <FontAwesomeIconView fill="#ccd1d1" glyphName="USER" size="30" strokeLineCap="ROUND" />
+                            </graphic>
+                            <HBox.margin>
+                                <Insets bottom="2.0" />
+                            </HBox.margin>
+                        </JFXButton>
+                    </children>
+                    <padding>
+                        <Insets right="20.0" top="5.0" />
+                    </padding>
+                </HBox>
+            </right>
+            <top>
+                <Label alignment="BOTTOM_LEFT" style="-fx-font-size: 22; -fx-text-fill: #F7F9F9; -fx-font-weight: bold;" text="AB - Store Management System " BorderPane.alignment="CENTER">
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                </Label>
+            </top>
+            <bottom>
+                <Label fx:id="errorNotification" style="-fx-background-color: #e8f0f0;" textAlignment="CENTER" textFill="#e42828" wrapText="true" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </Label>
+            </bottom>
+        </JFXToolbar>
+    </top>
+</BorderPane>

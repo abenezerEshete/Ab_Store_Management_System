@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171"
+      fx:controller="controller.ReportCon">
+    <children>
+        <JFXToolbar>
+            <left>
+                <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label style="-fx-font-size: 14; -fx-text-fill: #7387A8;" text="Year"/>
+                        <JFXComboBox fx:id="reportYear" onAction="#changeYear" promptText="2011"/>
+                        <Label style="-fx-font-size: 14; -fx-text-fill: #7387A8;" text="month"/>
+                        <JFXComboBox fx:id="reportMonth" onAction="#changeMonth" promptText="June">
+                            <HBox.margin>
+                                <Insets right="20.0"/>
+                            </HBox.margin>
+                        </JFXComboBox>
+                    </children>
+                </HBox>
+            </left>
+            <center>
+                <VBox BorderPane.alignment="CENTER">
+                    <children>
+                        <Pagination fx:id="reportPagination" maxPageIndicatorCount="31" nodeOrientation="LEFT_TO_RIGHT"
+                                    onMouseClicked="#updateReport" pageCount="31"
+                                    style="-fx-font-size: 13; -fx-font-weight: bold;"/>
+                    </children>
+                    <padding>
+                        <Insets top="10.0"/>
+                    </padding>
+                </VBox>
+            </center>
+        </JFXToolbar>
+        <TableView fx:id="reportTable" onMouseClicked="#getSelectedItem" tableMenuButtonVisible="true"
+                   VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="reportid" maxWidth="-1.0" prefWidth="-1.0" resizable="false" text="Id"
+                             visible="false"/>
+                <TableColumn fx:id="reportNo" maxWidth="-1.0" minWidth="50.0" prefWidth="-1.0" resizable="false"
+                             text="No"/>
+                <TableColumn fx:id="reportProductName" maxWidth="-1.0" minWidth="200.0" prefWidth="-1.0"
+                             text="Product Names"/>
+                <TableColumn fx:id="reportProductType" maxWidth="-1.0" minWidth="70.0" prefWidth="70.0" text="Type"/>
+                <TableColumn fx:id="reportProductGrade" maxWidth="-1.0" minWidth="70.0" prefWidth="70.0" text="Grade"/>
+                <TableColumn fx:id="reportProductModel" maxWidth="-1.0" minWidth="70.0" prefWidth="70.0" text="Model"/>
+                <TableColumn fx:id="reportProductSize" maxWidth="-1.0" minWidth="70.0" prefWidth="70.0" text="Size"/>
+                <TableColumn fx:id="reportProductBrand" maxWidth="-1.0" minWidth="70.0" prefWidth="70.0" text="Brand"/>
+                <TableColumn fx:id="reportTotalAmount" maxWidth="-1.0" minWidth="70.0" prefWidth="-1.0" text="Amount"/>
+                <TableColumn fx:id="reportUnitPrice" maxWidth="-1.0" minWidth="80.0" prefWidth="-1.0"
+                             text="Unit Price"/>
+                <TableColumn fx:id="reportTotalPrice" maxWidth="-1.0" minWidth="80.0" prefWidth="-1.0"
+                             text="Total Price"/>
+                <TableColumn fx:id="reportCustomerName" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0"
+                             text="Customer"/>
+                <TableColumn fx:id="reportDate" maxWidth="-1.0" minWidth="150.0" prefWidth="-1.0" text="Date"/>
+                <TableColumn fx:id="reportInvoiceNumber" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0"
+                             text="Invoice number"/>
+                <TableColumn fx:id="reportBroker" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" text="broker"/>
+                <TableColumn fx:id="selledBy" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" text="Selled By"/>
+            </columns>
+            <VBox.margin>
+                <Insets bottom="10.0"/>
+            </VBox.margin>
+            <padding>
+                <Insets bottom="10.0"/>
+            </padding>
+        </TableView>
+        <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="3.0">
+            <children>
+                <JFXButton fx:id="next" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="10.0"
+                           onAction="#nextload" ripplerFill="#756666" style="-fx-background-color: #00C0EF;" text="."
+                           textFill="WHITE">
+                    <font>
+                        <Font size="1.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="#fcf8f8" glyphName="ANGLE_RIGHT" size="30" strokeLineCap="ROUND"
+                                             strokeLineJoin="ROUND" strokeType="INSIDE"/>
+                    </graphic>
+                    <padding>
+                        <Insets left="15.0" right="15.0"/>
+                    </padding>
+                    <HBox.margin>
+                        <Insets bottom="2.0" top="3.0"/>
+                    </HBox.margin>
+                </JFXButton>
+                <Label fx:id="itemPage" alignment="CENTER" minWidth="70.0"
+                       style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="1/1">
+                    <padding>
+                        <Insets top="5.0"/>
+                    </padding>
+                    <HBox.margin>
+                        <Insets left="3.0" right="3.0"/>
+                    </HBox.margin>
+                </Label>
+                <JFXButton fx:id="back" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="10.0"
+                           onAction="#backpage" ripplerFill="#756666" style="-fx-background-color: #00C0EF;" text="."
+                           textFill="WHITE">
+                    <font>
+                        <Font size="1.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="#fcf8f8" glyphName="ANGLE_LEFT" size="30" strokeLineCap="ROUND"
+                                             strokeLineJoin="ROUND" strokeType="INSIDE"/>
+                    </graphic>
+                    <padding>
+                        <Insets left="15.0" right="15.0"/>
+                    </padding>
+                    <HBox.margin>
+                        <Insets bottom="2.0" top="3.0"/>
+                    </HBox.margin>
+                </JFXButton>
+            </children>
+        </HBox>
+    </children>
+</VBox>

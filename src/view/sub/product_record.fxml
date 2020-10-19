@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<JFXToolbar xmlns:fx="http://javafx.com/fxml/1" fx:id="product_record" styleClass="userrecord"
+            stylesheets="@../style/Style.css" xmlns="http://javafx.com/javafx/8.0.171">
+    <left>
+        <HBox fx:id="left" prefHeight="50.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets left="20.0" top="3.0"/>
+            </padding>
+            <children>
+                <ImageView fx:id="imageBox" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true">
+                    <viewport>
+                        <Rectangle2D/>
+                    </viewport>
+                    <image>
+                        <Image url="file:/C:/Users/abenezer1/Documents/Intellij_project/El-Pharma/user_profile/user6.jpg"/>
+                    </image>
+                </ImageView>
+                <VBox prefWidth="350.0">
+                    <children>
+                        <Label fx:id="nameField"
+                               style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Name"/>
+                        <Label fx:id="DiscField" prefWidth="350.0" style="-fx-font-size: 12; -fx-text-fill: #7387A8;"
+                               text="This is one biiig notification that spans the full width of its parent container.Subscribe to my channel for  more of these amazing material design interfaces."/>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="5.0"/>
+                    </HBox.margin>
+                </VBox>
+            </children>
+        </HBox>
+    </left>
+    <padding>
+        <Insets right="10.0"/>
+    </padding>
+    <right>
+        <HBox fx:id="right" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" spacing="10.0"
+              BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="brandField" alignment="CENTER" style="-fx-font-size: 14; -fx-text-fill: #7387A8;"
+                       text="Brand">
+                    <HBox.margin>
+                        <Insets right="15.0"/>
+                    </HBox.margin>
+                </Label>
+                <Label fx:id="exDatefield" alignment="CENTER" style="-fx-font-size: 14; -fx-text-fill: #7387A8;"
+                       text="Ex.date">
+                    <HBox.margin>
+                        <Insets right="5.0"/>
+                    </HBox.margin>
+                </Label>
+                <Label fx:id="addeddateField" alignment="CENTER" style="-fx-font-size: 14; -fx-text-fill: #7387A8;"
+                       text="Added Date"/>
+                <Label fx:id="amountField" style="-fx-font-size: 14; -fx-text-fill: #7387A8;" text="Amount">
+                    <HBox.margin>
+                        <Insets right="15.0"/>
+                    </HBox.margin>
+                </Label>
+                <Label fx:id="costField"
+                       style="-fx-alignment: center; -fx-background-radius: 6; -fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                       text="Cost Price">
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <padding>
+                        <Insets bottom="3.0" left="3.0" right="2.0" top="3.0"/>
+                    </padding>
+                    <HBox.margin>
+                        <Insets right="15.0"/>
+                    </HBox.margin>
+                </Label>
+                <Label fx:id="sellingFeild"
+                       style="-fx-alignment: center; -fx-background-radius: 6; -fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                       text="Selling Price">
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                    </padding>
+                    <HBox.margin>
+                        <Insets right="15.0"/>
+                    </HBox.margin>
+                </Label>
+                <JFXButton fx:id="edit" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #00A65A;"
+                           text="Edit" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto Medium" size="14.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" wrappingWidth="25.0"/>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="delete" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #DD4B39;"
+                           text="Delete" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto Medium" size="14.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView glyphName="REMOVE" size="16"/>
+                    </graphic>
+                </JFXButton>
+            </children>
+        </HBox>
+    </right>
+</JFXToolbar>

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/8.0.171"
+      fx:controller="controller.Selling">
+    <children>
+        <HBox>
+            <children>
+                <Label prefHeight="30.0" prefWidth="400.0"
+                       style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Point of sell">
+                    <padding>
+                        <Insets left="30.0"/>
+                    </padding>
+                </Label>
+                <Label fx:id="notification" prefHeight="30.0"
+                       style="-fx-font-size: 18; -fx-text-fill: #DD4B39 #DD4B39;">
+                    <padding>
+                        <Insets left="30.0"/>
+                    </padding>
+                </Label>
+            </children>
+        </HBox>
+        <Separator opacity="0.32" prefHeight="3.0" VBox.vgrow="NEVER">
+            <VBox.margin>
+                <Insets left="30.0"/>
+            </VBox.margin>
+        </Separator>
+        <HBox fx:id="posFirstHbox" spacing="30.0">
+            <children>
+                <VBox fx:id="posfirstVbox" style="-fx-border-width: 1; -fx-border-radius: 10;">
+                    <children>
+                        <Label minWidth="150.0" prefHeight="30.0"
+                               style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                               text="Search Product">
+                            <VBox.margin>
+                                <Insets/>
+                            </VBox.margin>
+                            <padding>
+                                <Insets left="30.0"/>
+                            </padding>
+                        </Label>
+                        <RequiredFieldValidator fx:id="required" message="Enter product name here"/>
+                        <Separator maxWidth="550.0" prefHeight="4.0" prefWidth="350.0">
+                            <VBox.margin>
+                                <Insets bottom="20.0"/>
+                            </VBox.margin>
+                        </Separator>
+                        <HBox fx:id="posinputHbox" minWidth="200.0">
+                            <children>
+                                <JFXButton fx:id="addToSellListButton" contentDisplay="CENTER" onAction="#addToSellList"
+                                           ripplerFill="#4f8de4" text="." textFill="WHITE">
+                                    <font>
+                                        <Font name="Roboto Medium" size="15.0"/>
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIconView fill="#28b2e4" glyphName="ARROW_RIGHT" size="22"/>
+                                    </graphic>
+                                </JFXButton>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" top="20.0"/>
+                            </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="30.0" spacing="11.0">
+                            <children>
+                                <Label fx:id="model" style="-fx-font-size: 14;" text="Model">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                            <VBox.margin>
+                                <Insets top="20.0"/>
+                            </VBox.margin>
+                        </HBox>
+                        <HBox spacing="11.0">
+                            <children>
+                                <Label fx:id="grade" alignment="CENTER" style="-fx-font-size: 14;" text="Grade">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </HBox>
+                        <HBox spacing="11.0">
+                            <children>
+                                <Label fx:id="brand" alignment="CENTER" style="-fx-font-size: 14;" text="Brand"
+                                       HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </HBox>
+                        <HBox spacing="11.0">
+                            <children>
+                                <Label fx:id="size" alignment="CENTER" style="-fx-font-size: 14;" text="Size"
+                                       HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </HBox>
+                        <HBox spacing="11.0">
+                            <children>
+                                <Label fx:id="type" alignment="CENTER" style="-fx-font-size: 14;" text="Type"
+                                       HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </HBox>
+                        <HBox spacing="11.0">
+                            <children>
+                                <Label fx:id="prodactPrice" alignment="CENTER" style="-fx-font-size: 14;" text="Price"
+                                       HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </HBox>
+                    </children>
+                    <effect>
+                        <InnerShadow color="#ceeeed" height="1.0" radius="0.0" width="0.0"/>
+                    </effect>
+                </VBox>
+                <Separator orientation="VERTICAL" prefHeight="4.0"/>
+                <VBox HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label prefHeight="30.0" prefWidth="392.0"
+                               style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                               text="Order Summary">
+                            <VBox.margin>
+                                <Insets/>
+                            </VBox.margin>
+                            <padding>
+                                <Insets left="30.0"/>
+                            </padding>
+                        </Label>
+                        <Separator maxHeight="500.0" prefWidth="400.0">
+                            <VBox.margin>
+                                <Insets bottom="5.0" top="5.0"/>
+                            </VBox.margin>
+                        </Separator>
+                        <HBox fx:id="customerHbox" spacing="5.0">
+                            <children>
+                                <Label prefHeight="30.0" text="Customer Name">
+                                    <padding>
+                                        <Insets left="30.0"/>
+                                    </padding>
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets right="5.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <JFXButton fx:id="addCustomerToSellingList" contentDisplay="CENTER"
+                                           onAction="#addToSellList" ripplerFill="#4f8de4" text="." textFill="WHITE">
+                                    <font>
+                                        <Font name="Roboto Medium" size="15.0"/>
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIconView fill="#28b2e4" glyphName="ARROW_RIGHT" size="22"/>
+                                    </graphic>
+                                </JFXButton>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="5.0"/>
+                            </VBox.margin>
+                        </HBox>
+                        <HBox fx:id="borkerHbox" spacing="5.0">
+                            <children>
+                                <Label text="Broker ">
+                                    <padding>
+                                        <Insets left="30.0"/>
+                                    </padding>
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets top="5.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <JFXCheckBox fx:id="brokerCheckBox" text=".">
+                                    <font>
+                                        <Font size="1.0"/>
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets top="5.0"/>
+                                    </HBox.margin>
+                                </JFXCheckBox>
+                                <JFXButton fx:id="addBrokerTosellingList" contentDisplay="CENTER"
+                                           onAction="#addToSellList" ripplerFill="#4f8de4" text="." textFill="WHITE">
+                                    <font>
+                                        <Font name="Roboto Medium" size="15.0"/>
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIconView fill="#28b2e4" glyphName="ARROW_RIGHT" size="22"/>
+                                    </graphic>
+                                </JFXButton>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="8.0"/>
+                            </VBox.margin>
+                        </HBox>
+                        <ScrollPane fitToHeight="true" fitToWidth="true">
+                            <content>
+                                <VBox fx:id="sellingList" minHeight="200.0" prefHeight="250.0" prefWidth="500.0"
+                                      spacing="3.0" style="-fx-background-color: #EBF5FB;">
+                                    <padding>
+                                        <Insets left="2.0" right="2.0" top="2.0"/>
+                                    </padding>
+                                </VBox>
+                            </content>
+                            <VBox.margin>
+                                <Insets/>
+                            </VBox.margin>
+                        </ScrollPane>
+                        <Label fx:id="totalPriceDisplay" prefHeight="20.0"
+                               style="-fx-alignment: center; -fx-background-radius: 2; -fx-text-fill: black; -fx-font-size: 18; -fx-font-weight: bold;"
+                               text="Total">
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                            <VBox.margin>
+                                <Insets left="5.0" top="10.0"/>
+                            </VBox.margin>
+                            <padding>
+                                <Insets bottom="2.0" left="5.0" right="5.0" top="2.0"/>
+                            </padding>
+                        </Label>
+                        <Separator maxHeight="500.0" prefHeight="4.0" prefWidth="400.0">
+                            <VBox.margin>
+                                <Insets bottom="5.0" top="10.0"/>
+                            </VBox.margin>
+                        </Separator>
+                        <HBox fx:id="commisionPayedHbox">
+                            <children>
+                                <Label fx:id="totalPriceDisplay1" contentDisplay="RIGHT" prefHeight="20.0"
+                                       style="-fx-alignment: center; -fx-text-fill: black; -fx-font-size: 16; -fx-font-weight: bold;"
+                                       text="Commision Payed">
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets bottom="2.0" left="5.0" right="5.0" top="2.0"/>
+                                    </padding>
+                                </Label>
+                                <JFXCheckBox fx:id="commisionPayedCheckBox" alignment="TOP_CENTER" text="."
+                                             textAlignment="RIGHT">
+                                    <font>
+                                        <Font size="1.0"/>
+                                    </font>
+                                    <padding>
+                                        <Insets top="2.0"/>
+                                    </padding>
+                                    <HBox.margin>
+                                        <Insets left="5.0" top="5.0"/>
+                                    </HBox.margin>
+                                </JFXCheckBox>
+                                <Label fx:id="commisionPrice" contentDisplay="RIGHT" prefHeight="20.0"
+                                       style="-fx-alignment: center; -fx-text-fill: black; -fx-font-size: 16; -fx-font-weight: bold;"
+                                       text="Commision Price">
+                                    <opaqueInsets>
+                                        <Insets/>
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets bottom="2.0" left="5.0" right="5.0" top="2.0"/>
+                                    </padding>
+                                </Label>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="10.0"/>
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                            <children>
+                                <JFXButton fx:id="cancel" onAction="#cancel"
+                                           style="-fx-background-color: #DD4B39 #DD4B39;" text="Cancel"
+                                           textFill="WHITE">
+                                    <font>
+                                        <Font name="Roboto Medium" size="15.0"/>
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="5.0" left="15.0" right="15.0" top="5.0"/>
+                                    </padding>
+                                </JFXButton>
+                                <JFXButton fx:id="purchase" onAction="#purchase" style="-fx-background-color: #2ECC71;"
+                                           text="Purchase" textFill="WHITE">
+                                    <font>
+                                        <Font name="Roboto Medium" size="15.0"/>
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="5.0" left="15.0" right="15.0" top="5.0"/>
+                                    </padding>
+                                </JFXButton>
+                                <Label style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                                       text="purchase notification">
+                                    <padding>
+                                        <Insets left="30.0"/>
+                                    </padding>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                    <HBox.margin>
+                        <Insets bottom="10.0" right="20.0"/>
+                    </HBox.margin>
+                </VBox>
+            </children>
+            <padding>
+                <Insets left="30.0"/>
+            </padding>
+        </HBox>
+    </children>
+</VBox>

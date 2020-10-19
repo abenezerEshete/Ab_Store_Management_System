@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<JFXToolbar xmlns:fx="http://javafx.com/fxml/1" fx:id="selling_record" style="-fx-background-color: #FFF;"
+            xmlns="http://javafx.com/javafx/8.0.171">
+    <left>
+        <Label fx:id="nameField" maxWidth="190.0" minWidth="190.0" prefWidth="190.0"
+               style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Name">
+            <padding>
+                <Insets right="5.0" top="5.0"/>
+            </padding>
+        </Label>
+    </left>
+    <padding>
+        <Insets bottom="3.0" right="5.0" top="3.0"/>
+    </padding>
+    <right>
+        <HBox fx:id="right" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" spacing="10.0"
+              BorderPane.alignment="CENTER">
+            <children>
+                <Spinner editable="true" prefHeight="25.0" prefWidth="120.0"/>
+                <Label fx:id="measureUnitText" alignment="CENTER" style="-fx-font-size: 14; -fx-text-fill: #7387A8;"
+                       text="Measure Unit"/>
+                <Label fx:id="amount" alignment="CENTER" style="-fx-font-size: 14; -fx-text-fill: #7387A8;"
+                       text="Amount">
+                    <HBox.margin>
+                        <Insets right="10.0"/>
+                    </HBox.margin>
+                </Label>
+                <Label fx:id="price" alignment="CENTER" style="-fx-font-size: 14; -fx-text-fill: #7387A8;"
+                       text="Total price">
+                    <HBox.margin>
+                        <Insets right="10.0"/>
+                    </HBox.margin>
+                </Label>
+                <JFXButton fx:id="remove" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0"
+                           prefHeight="27.0" prefWidth="29.0" ripplerFill="#282727"
+                           style="-fx-background-color: #DD4B39;" text="." textFill="WHITE">
+                    <font>
+                        <Font size="1.0"/>
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="16"/>
+                    </graphic>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </JFXButton>
+            </children>
+            <padding>
+                <Insets bottom="2.0" left="10.0" right="5.0" top="2.0"/>
+            </padding>
+        </HBox>
+    </right>
+</JFXToolbar>

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.validation.DoubleValidator?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="addProduct" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="controller.AddProductType">
+    <children>
+        <VBox layoutY="5.0" style="-fx-background-color: #FBFCFC;">
+            <children>
+                <HBox fillHeight="false">
+                    <children>
+                        <Label alignment="BOTTOM_LEFT" prefWidth="382.0"
+                               style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                               text="Add Product Type">
+                            <padding>
+                                <Insets top="30.0"/>
+                            </padding>
+                        </Label>
+                        <Label fx:id="saveNotification" alignment="BOTTOM_LEFT"
+                               style="-fx-font-size: 18; -fx-text-fill: #2258e1;">
+                            <padding>
+                                <Insets top="30.0"/>
+                            </padding>
+                        </Label>
+                    </children>
+                </HBox>
+                <GridPane style="-fx-border-width: 3; -fx-border-color: #D6EAF8;" vgap="25.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308"
+                                           percentWidth="0.0"/>
+                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308"
+                                           percentWidth="0.0"/>
+                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" percentWidth="0.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <HBox spacing="10.0">
+                            <children>
+                                <Label prefWidth="60.0" text="Name ">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                                <JFXTextField fx:id="name" prefWidth="250.0" style="-fx-background-color: #EBF5FB;">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </JFXTextField>
+                                <RequiredFieldValidator fx:id="nameRequiredValidator" message="This field is required"/>
+                            </children>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </HBox>
+                        <HBox prefHeight="30.0" spacing="11.0" GridPane.rowIndex="1">
+                            <children>
+                                <Label prefWidth="60.0" text="Model">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                                <JFXTextField fx:id="model" prefWidth="150.0" style="-fx-background-color: #EBF5FB;">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </JFXTextField>
+                            </children>
+                            <GridPane.margin>
+                                <Insets/>
+                            </GridPane.margin>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </HBox>
+                        <HBox spacing="11.0" GridPane.columnIndex="2" GridPane.halignment="LEFT"
+                              GridPane.hgrow="ALWAYS">
+                            <children>
+                                <Label alignment="CENTER" text="Brand" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                                <JFXTextField fx:id="brand" prefWidth="150.0" style="-fx-background-color: #EBF5FB;">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </JFXTextField>
+                            </children>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </HBox>
+                        <HBox spacing="11.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <children>
+                                <Label alignment="CENTER" text="Grade">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                                <JFXTextField fx:id="grade" prefWidth="150.0" style="-fx-background-color: #EBF5FB;">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </JFXTextField>
+                            </children>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </HBox>
+                        <HBox spacing="11.0" GridPane.columnIndex="1">
+                            <children>
+                                <Label alignment="CENTER" text="Type" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                                <JFXTextField fx:id="type" prefWidth="150.0" style="-fx-background-color: #EBF5FB;">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </JFXTextField>
+                            </children>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </HBox>
+                        <HBox spacing="11.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <Label alignment="CENTER" text="Size" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </Label>
+                                <JFXTextField fx:id="size" prefWidth="150.0" style="-fx-background-color: #EBF5FB;">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </JFXTextField>
+                            </children>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" right="10.0" top="15.0"/>
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="10.0" top="10.0"/>
+                    </VBox.margin>
+                </GridPane>
+                <HBox spacing="30.0">
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </HBox>
+                <HBox prefHeight="30.0" spacing="11.0">
+                    <children>
+                        <Label prefWidth="200.0" text="Unit Selling Price">
+                            <HBox.margin>
+                                <Insets top="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="sellingPrice" prefWidth="200.0" style="-fx-background-color: #EBF5FB;">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </JFXTextField>
+                        <RequiredFieldValidator fx:id="sellingPriceRequierValidator" message="This field is required"/>
+                        <DoubleValidator fx:id="sellingPriceNumberValidator"/>
+                    </children>
+                    <padding>
+                        <Insets left="10.0"/>
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="30.0"/>
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="30.0" spacing="11.0">
+                    <children>
+                        <Label prefWidth="200.0" text="Selling Measurement" wrapText="true">
+                            <HBox.margin>
+                                <Insets top="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Label>
+                        <JFXComboBox fx:id="sellingMeasurment" prefWidth="200.0"/>
+                        <HBox fx:id="oneMeasurePriceHbox" prefHeight="30.0" spacing="11.0">
+                            <children>
+                                <Label style="-fx-font-size: 14; -fx-text-fill: #7387A8;"
+                                       text="One Selling measure Price">
+                                    <HBox.margin>
+                                        <Insets top="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <JFXTextField fx:id="oneMeasurePrice" prefWidth="100.0"
+                                              style="-fx-background-color: #EBF5FB;">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </JFXTextField>
+                            </children>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                            <HBox.margin>
+                                <Insets left="30.0"/>
+                            </HBox.margin>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets left="10.0"/>
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="20.0"/>
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="30.0" spacing="11.0">
+                    <children>
+                        <Label prefWidth="200.0" text="Unit to selling measure">
+                            <HBox.margin>
+                                <Insets top="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="unitToSellingMeasurment" prefWidth="200.0"
+                                      style="-fx-background-color: #EBF5FB;">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </JFXTextField>
+                        <DoubleValidator fx:id="unitSellingPriceDoubleValidator" layoutX="453.0" layoutY="10.0"/>
+                        <Label alignment="CENTER" text="Has broker">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <HBox.margin>
+                                <Insets left="50.0"/>
+                            </HBox.margin>
+                        </Label>
+                        <JFXCheckBox fx:id="hasBroker" alignment="CENTER_RIGHT" text="." textAlignment="RIGHT"
+                                     textOverrun="CLIP">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <HBox.margin>
+                                <Insets/>
+                            </HBox.margin>
+                        </JFXCheckBox>
+                    </children>
+                    <padding>
+                        <Insets left="10.0"/>
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="30.0"/>
+                    </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT">
+                    <children>
+                        <ButtonBar buttonMinWidth="0.0">
+                            <buttons>
+                                <JFXButton fx:id="cancel" buttonType="RAISED" onAction="#cancelCloseWindow"
+                                           prefWidth="100.0" ripplerFill="#81acee"
+                                           style="-fx-border-width: 1; -fx-border-color: #81acee;" text="Cancel"
+                                           textFill="#270dcd">
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="8.0" left="5.0" right="5.0" top="8.0"/>
+                                    </padding>
+                                </JFXButton>
+                                <JFXButton fx:id="resetInput" buttonType="RAISED" onAction="#deletInput"
+                                           prefWidth="100.0" ripplerFill="#a2c2f6"
+                                           style="-fx-background-color: #EC7063;" text="Clear" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="8.0" left="5.0" right="5.0" top="8.0"/>
+                                    </padding>
+                                </JFXButton>
+                                <JFXButton fx:id="saveButton" buttonType="RAISED" onAction="#saveData" prefWidth="100.0"
+                                           ripplerFill="#a2c2f6" style="-fx-background-color: #2d76eb;" text="Save"
+                                           textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="8.0" left="5.0" right="5.0" top="8.0"/>
+                                    </padding>
+                                </JFXButton>
+                            </buttons>
+                            <HBox.margin>
+                                <Insets bottom="10.0"/>
+                            </HBox.margin>
+                        </ButtonBar>
+                    </children>
+                    <padding>
+                        <Insets right="20.0"/>
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="20.0"/>
+                    </VBox.margin>
+                </HBox>
+            </children>
+            <padding>
+                <Insets left="10.0"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

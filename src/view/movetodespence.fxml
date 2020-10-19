@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.DoubleValidator?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="addProduct" xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="controller.MoveProductToDespence">
+    <children>
+        <VBox AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox>
+                    <children>
+                        <Label alignment="BOTTOM_LEFT" prefWidth="382.0"
+                               style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                               text="Move Product From Store to Despence">
+                            <padding>
+                                <Insets top="30.0"/>
+                            </padding>
+                            <HBox.margin>
+                                <Insets left="30.0"/>
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="notification" alignment="CENTER" prefWidth="382.0"
+                               style="-fx-font-size: 16; -fx-text-fill: red;">
+                            <padding>
+                                <Insets top="30.0"/>
+                            </padding>
+                        </Label>
+                    </children>
+                </HBox>
+                <Separator>
+                    <VBox.margin>
+                        <Insets bottom="10.0"/>
+                    </VBox.margin>
+                </Separator>
+                <HBox>
+                    <children>
+                        <VBox prefWidth="350.0">
+                            <children>
+                                <Label alignment="BOTTOM_LEFT" prefWidth="382.0"
+                                       style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                                       text="Store">
+                                    <padding>
+                                        <Insets top="30.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="30.0"/>
+                                    </VBox.margin>
+                                </Label>
+                                <Separator prefWidth="200.0">
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="10.0" right="10.0"/>
+                                    </VBox.margin>
+                                </Separator>
+                                <HBox fx:id="nameHbox" spacing="10.0">
+                                    <children>
+                                        <Label style="-fx-font-size: 14;" text="Name ">
+                                            <HBox.margin>
+                                                <Insets top="10.0"/>
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                    <padding>
+                                        <Insets left="10.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets bottom="20.0" top="10.0"/>
+                                    </VBox.margin>
+                                </HBox>
+                                <HBox prefHeight="30.0" spacing="11.0">
+                                    <children>
+                                        <Label fx:id="model" style="-fx-font-size: 14;" text="Model">
+                                            <HBox.margin>
+                                                <Insets top="10.0"/>
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                    <padding>
+                                        <Insets left="10.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox spacing="11.0">
+                                    <children>
+                                        <Label fx:id="grade" alignment="CENTER" style="-fx-font-size: 14;" text="Grade">
+                                            <HBox.margin>
+                                                <Insets top="10.0"/>
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                    <padding>
+                                        <Insets left="10.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox spacing="11.0">
+                                    <children>
+                                        <Label fx:id="brand" alignment="CENTER" style="-fx-font-size: 14;" text="Brand"
+                                               HBox.hgrow="ALWAYS">
+                                            <HBox.margin>
+                                                <Insets top="10.0"/>
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                    <padding>
+                                        <Insets left="10.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox spacing="11.0">
+                                    <children>
+                                        <Label fx:id="size" alignment="CENTER" style="-fx-font-size: 14;" text="Size"
+                                               HBox.hgrow="ALWAYS">
+                                            <HBox.margin>
+                                                <Insets top="10.0"/>
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                    <padding>
+                                        <Insets left="10.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox spacing="11.0">
+                                    <children>
+                                        <Label fx:id="type" alignment="CENTER" style="-fx-font-size: 14;" text="Type"
+                                               HBox.hgrow="ALWAYS">
+                                            <HBox.margin>
+                                                <Insets top="10.0"/>
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                    <padding>
+                                        <Insets left="10.0"/>
+                                    </padding>
+                                </HBox>
+                                <HBox spacing="30.0">
+                                    <VBox.margin>
+                                        <Insets/>
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                                    </padding>
+                                </HBox>
+                            </children>
+                            <HBox.margin>
+                                <Insets bottom="30.0" top="5.0"/>
+                            </HBox.margin>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </VBox>
+                        <VBox fx:id="tobesavedList" alignment="CENTER" prefWidth="150.0"
+                              style="-fx-background-color: #afb0bf;">
+                            <padding>
+                                <Insets bottom="40.0"/>
+                            </padding>
+                            <children>
+                                <Label fx:id="totalAmount" alignment="CENTER" style="-fx-font-size: 14;"
+                                       text="Total Amount in Store: " textAlignment="CENTER" textFill="WHITE"
+                                       wrapText="true">
+                                    <VBox.margin>
+                                        <Insets bottom="20.0"/>
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets left="10.0" right="10.0"/>
+                                    </padding>
+                                </Label>
+                                <Label fx:id="totalAmount1" alignment="TOP_LEFT" style="-fx-font-size: 14;"
+                                       text="Move Amount" textFill="WHITE"/>
+                                <DoubleValidator fx:id="amountDoubleValidator"/>
+                                <RequiredFieldValidator fx:id="amountREquieredValidator"/>
+                                <JFXTextField fx:id="amountField" prefWidth="300.0" style="-fx-background-color: #FFF;"
+                                              unFocusColor="#3b3b3c">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="10.0" right="10.0"/>
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" top="10.0"/>
+                                    </padding>
+                                </JFXTextField>
+                                <JFXButton fx:id="move" buttonType="RAISED" contentDisplay="RIGHT" graphicTextGap="10.0"
+                                           onAction="#Move" prefWidth="100.0" ripplerFill="#a2c2f6"
+                                           style="-fx-background-color: #FFF;" text="Move" textFill="#224b8a">
+                                    <font>
+                                        <Font name="System Bold" size="14.0"/>
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="8.0" left="5.0" right="5.0" top="8.0"/>
+                                    </padding>
+                                    <graphic>
+                                        <FontAwesomeIconView fill="#2e86c1" glyphName="ARROW_RIGHT" size="22"
+                                                             strokeType="INSIDE"/>
+                                    </graphic>
+                                    <VBox.margin>
+                                        <Insets top="20.0"/>
+                                    </VBox.margin>
+                                </JFXButton>
+                            </children>
+                            <HBox.margin>
+                                <Insets/>
+                            </HBox.margin>
+                        </VBox>
+                        <VBox fx:id="tobesavedList1" prefWidth="350.0">
+                            <children>
+                                <Label alignment="BOTTOM_LEFT" prefWidth="382.0"
+                                       style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                                       text="Despence">
+                                    <padding>
+                                        <Insets top="30.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="30.0"/>
+                                    </VBox.margin>
+                                </Label>
+                                <Separator prefWidth="200.0"/>
+                                <Label fx:id="despenceName" alignment="CENTER" style="-fx-font-size: 14;" text="Name">
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="30.0" top="20.0"/>
+                                    </VBox.margin>
+                                </Label>
+                                <Label fx:id="despenceAmount" alignment="CENTER" style="-fx-font-size: 14;"
+                                       text="Amount">
+                                    <VBox.margin>
+                                        <Insets left="30.0" top="10.0"/>
+                                    </VBox.margin>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

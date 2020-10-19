@@ -1,0 +1,1 @@
+{"address":"Addis ababa, Ethiopia","phone":"092323233","contact":"Bereket Simeneh","name":"Hagere Plcs","autoprint":true,"itemperpage":5,"message":"Thank you","email":"bekeret@gmail.com"},

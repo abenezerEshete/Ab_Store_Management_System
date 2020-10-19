@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="notification" stylesheets="@../style/Style.css"
+            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controller.Notification">
+    <children>
+        <TabPane fx:id="productTabPane" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0"
+                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab fx:id="StoreToDespenceTab"
+                     style="-fx-font-size: 15; -fx-font-weight: bold; -fx-font-family: System;" text="Stock Alert">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <SplitPane dividerPositions="0.5" AnchorPane.bottomAnchor="0.0"
+                                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                           AnchorPane.topAnchor="3.0">
+                                    <items>
+                                        <AnchorPane maxWidth="500.0" minWidth="500.0" prefWidth="500.0">
+                                            <children>
+                                                <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT"
+                                                      stylesheets="@../style/Style.css" AnchorPane.bottomAnchor="0.0"
+                                                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                                      AnchorPane.topAnchor="0.0">
+                                                    <children>
+                                                        <Label alignment="CENTER" contentDisplay="CENTER"
+                                                               style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                                                               text="Store Alert Products"/>
+                                                        <JFXTabPane prefWidth="500.0"/>
+                                                        <Separator>
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0"/>
+                                                            </VBox.margin>
+                                                        </Separator>
+                                                        <TableView fx:id="productTable3"
+                                                                   onMouseClicked="#getSelectedItem"
+                                                                   style="-fx-font-size: 14;"
+                                                                   tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                                                            <columns>
+                                                                <TableColumn fx:id="productId3" editable="false"
+                                                                             prefWidth="75.0" resizable="false"
+                                                                             sortable="false" text="id"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productSelector3" maxWidth="40.0"
+                                                                             minWidth="40.0" prefWidth="40.0"
+                                                                             resizable="false" sortable="false"
+                                                                             text="sel" visible="false"/>
+                                                                <TableColumn fx:id="productNumber3" maxWidth="50.0"
+                                                                             minWidth="50.0" prefWidth="50.0"
+                                                                             resizable="false" text="no."/>
+                                                                <TableColumn fx:id="productBatch3" minWidth="100.0"
+                                                                             prefWidth="75.0" sortable="false"
+                                                                             text="Batch number"/>
+                                                                <TableColumn fx:id="productName3" maxWidth="260.0"
+                                                                             minWidth="260.0" prefWidth="260.0"
+                                                                             text="Name"/>
+                                                                <TableColumn fx:id="productAmount3" prefWidth="75.0"
+                                                                             text="Amount"/>
+                                                                <TableColumn fx:id="productType3" maxWidth="-1.0"
+                                                                             minWidth="100.0" prefWidth="-1.0"
+                                                                             text="Type/Unit" visible="false"/>
+                                                                <TableColumn fx:id="productSupplier3" minWidth="100.0"
+                                                                             prefWidth="75.0" sortable="false"
+                                                                             text="Supplier" visible="false"/>
+                                                                <TableColumn fx:id="productSelling3" prefWidth="75.0"
+                                                                             text="Selling price" visible="false"/>
+                                                                <TableColumn fx:id="productPaymentType3"
+                                                                             minWidth="100.0" prefWidth="75.0"
+                                                                             text="Payment Type" visible="false"/>
+                                                                <TableColumn fx:id="productExDate3" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Expire-Date"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productModel3" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Model"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productBrand3" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Brand"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productCost3" prefWidth="75.0"
+                                                                             text="Cost price" visible="false"/>
+                                                                <TableColumn fx:id="productAddedDate3" minWidth="100.0"
+                                                                             prefWidth="75.0" text="added Date"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productCheqNo3" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Cheq number"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productInvoiceNo3" minWidth="100.0"
+                                                                             prefWidth="75.0" text="invoice Number"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productCreatedBy3" minWidth="100.0"
+                                                                             prefWidth="75.0" text="created By"
+                                                                             visible="false"/>
+                                                            </columns>
+                                                            <VBox.margin>
+                                                                <Insets left="7.0"/>
+                                                            </VBox.margin>
+                                                            <padding>
+                                                                <Insets left="7.0" right="5.0"/>
+                                                            </padding>
+                                                        </TableView>
+                                                        <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="3.0">
+                                                            <children>
+                                                                <JFXButton fx:id="next3" alignment="CENTER"
+                                                                           contentDisplay="GRAPHIC_ONLY"
+                                                                           graphicTextGap="10.0" onAction="#nextload"
+                                                                           ripplerFill="#756666"
+                                                                           style="-fx-background-color: #00C0EF;"
+                                                                           text="." textFill="WHITE">
+                                                                    <font>
+                                                                        <Font size="1.0"/>
+                                                                    </font>
+                                                                    <graphic>
+                                                                        <FontAwesomeIconView fill="#fcf8f8"
+                                                                                             glyphName="ANGLE_RIGHT"
+                                                                                             size="30"
+                                                                                             strokeLineCap="ROUND"
+                                                                                             strokeLineJoin="ROUND"
+                                                                                             strokeType="INSIDE"/>
+                                                                    </graphic>
+                                                                    <padding>
+                                                                        <Insets left="15.0" right="15.0"/>
+                                                                    </padding>
+                                                                    <HBox.margin>
+                                                                        <Insets bottom="2.0" top="3.0"/>
+                                                                    </HBox.margin>
+                                                                </JFXButton>
+                                                                <Label fx:id="itemPage3" alignment="CENTER"
+                                                                       minWidth="70.0"
+                                                                       style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                                                                       text="123">
+                                                                    <padding>
+                                                                        <Insets top="5.0"/>
+                                                                    </padding>
+                                                                    <HBox.margin>
+                                                                        <Insets left="3.0" right="3.0"/>
+                                                                    </HBox.margin>
+                                                                </Label>
+                                                                <JFXButton fx:id="back3" alignment="CENTER"
+                                                                           contentDisplay="GRAPHIC_ONLY"
+                                                                           graphicTextGap="10.0" onAction="#backpage"
+                                                                           ripplerFill="#756666"
+                                                                           style="-fx-background-color: #00C0EF;"
+                                                                           text="." textFill="WHITE">
+                                                                    <font>
+                                                                        <Font size="1.0"/>
+                                                                    </font>
+                                                                    <graphic>
+                                                                        <FontAwesomeIconView fill="#fcf8f8"
+                                                                                             glyphName="ANGLE_LEFT"
+                                                                                             size="30"
+                                                                                             strokeLineCap="ROUND"
+                                                                                             strokeLineJoin="ROUND"
+                                                                                             strokeType="INSIDE"/>
+                                                                    </graphic>
+                                                                    <padding>
+                                                                        <Insets left="15.0" right="15.0"/>
+                                                                    </padding>
+                                                                    <HBox.margin>
+                                                                        <Insets bottom="2.0" top="3.0"/>
+                                                                    </HBox.margin>
+                                                                </JFXButton>
+                                                            </children>
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"/>
+                                                            </VBox.margin>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane>
+                                            <children>
+                                                <VBox nodeOrientation="LEFT_TO_RIGHT" stylesheets="@../style/Style.css"
+                                                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <children>
+                                                        <Label alignment="CENTER" prefWidth="382.0"
+                                                               style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                                                               text="Despensce Alert Products"/>
+                                                        <JFXTabPane prefWidth="500.0"/>
+                                                        <Separator>
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0"/>
+                                                            </VBox.margin>
+                                                        </Separator>
+                                                        <TableView fx:id="productTable4"
+                                                                   onMouseClicked="#getSelectedItem"
+                                                                   style="-fx-font-size: 14;"
+                                                                   tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                                                            <columns>
+                                                                <TableColumn fx:id="productId4" editable="false"
+                                                                             prefWidth="75.0" resizable="false"
+                                                                             sortable="false" text="id"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productSelector4" maxWidth="40.0"
+                                                                             minWidth="40.0" prefWidth="40.0"
+                                                                             resizable="false" sortable="false"
+                                                                             text="sel" visible="false"/>
+                                                                <TableColumn fx:id="productNumber4" maxWidth="50.0"
+                                                                             minWidth="50.0" prefWidth="50.0"
+                                                                             resizable="false" text="no."/>
+                                                                <TableColumn fx:id="productBatch4" minWidth="100.0"
+                                                                             prefWidth="75.0" sortable="false"
+                                                                             text="Batch number"/>
+                                                                <TableColumn fx:id="productName4" minWidth="300.0"
+                                                                             prefWidth="300.0" text="Name"/>
+                                                                <TableColumn fx:id="productAmount4" prefWidth="75.0"
+                                                                             text="Amount"/>
+                                                                <TableColumn fx:id="productType4" maxWidth="-1.0"
+                                                                             minWidth="100.0" prefWidth="-1.0"
+                                                                             text="Type/Unit" visible="false"/>
+                                                                <TableColumn fx:id="productSupplier4" minWidth="100.0"
+                                                                             prefWidth="75.0" sortable="false"
+                                                                             text="Supplier" visible="false"/>
+                                                                <TableColumn fx:id="productSelling4" prefWidth="75.0"
+                                                                             text="Selling price" visible="false"/>
+                                                                <TableColumn fx:id="productPaymentType4"
+                                                                             minWidth="100.0" prefWidth="75.0"
+                                                                             text="Payment Type" visible="false"/>
+                                                                <TableColumn fx:id="productExDate4" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Expire-Date"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productModel4" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Model"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productBrand4" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Brand"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productCost4" prefWidth="75.0"
+                                                                             text="Cost price" visible="false"/>
+                                                                <TableColumn fx:id="productAddedDate4" minWidth="100.0"
+                                                                             prefWidth="75.0" text="added Date"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productCheqNo4" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Cheq number"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productInvoiceNo4" minWidth="100.0"
+                                                                             prefWidth="75.0" text="invoice Number"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productCreatedBy4" minWidth="100.0"
+                                                                             prefWidth="75.0" text="created By"
+                                                                             visible="false"/>
+                                                            </columns>
+                                                            <VBox.margin>
+                                                                <Insets left="7.0"/>
+                                                            </VBox.margin>
+                                                            <padding>
+                                                                <Insets left="7.0" right="5.0"/>
+                                                            </padding>
+                                                        </TableView>
+                                                        <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="3.0">
+                                                            <children>
+                                                                <JFXButton fx:id="next4" alignment="CENTER"
+                                                                           contentDisplay="GRAPHIC_ONLY"
+                                                                           graphicTextGap="10.0"
+                                                                           onAction="#nextdespenceload"
+                                                                           ripplerFill="#756666"
+                                                                           style="-fx-background-color: #00C0EF;"
+                                                                           text="." textFill="WHITE">
+                                                                    <font>
+                                                                        <Font size="1.0"/>
+                                                                    </font>
+                                                                    <graphic>
+                                                                        <FontAwesomeIconView fill="#fcf8f8"
+                                                                                             glyphName="ANGLE_RIGHT"
+                                                                                             size="30"
+                                                                                             strokeLineCap="ROUND"
+                                                                                             strokeLineJoin="ROUND"
+                                                                                             strokeType="INSIDE"/>
+                                                                    </graphic>
+                                                                    <padding>
+                                                                        <Insets left="15.0" right="15.0"/>
+                                                                    </padding>
+                                                                    <HBox.margin>
+                                                                        <Insets bottom="2.0" top="3.0"/>
+                                                                    </HBox.margin>
+                                                                </JFXButton>
+                                                                <Label fx:id="itemPage4" alignment="CENTER"
+                                                                       minWidth="70.0"
+                                                                       style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                                                                       text="123">
+                                                                    <padding>
+                                                                        <Insets top="5.0"/>
+                                                                    </padding>
+                                                                    <HBox.margin>
+                                                                        <Insets left="3.0" right="3.0"/>
+                                                                    </HBox.margin>
+                                                                </Label>
+                                                                <JFXButton fx:id="back4" alignment="CENTER"
+                                                                           contentDisplay="GRAPHIC_ONLY"
+                                                                           graphicTextGap="10.0"
+                                                                           onAction="#backdespencepage"
+                                                                           ripplerFill="#756666"
+                                                                           style="-fx-background-color: #00C0EF;"
+                                                                           text="." textFill="WHITE">
+                                                                    <font>
+                                                                        <Font size="1.0"/>
+                                                                    </font>
+                                                                    <graphic>
+                                                                        <FontAwesomeIconView fill="#fcf8f8"
+                                                                                             glyphName="ANGLE_LEFT"
+                                                                                             size="30"
+                                                                                             strokeLineCap="ROUND"
+                                                                                             strokeLineJoin="ROUND"
+                                                                                             strokeType="INSIDE"/>
+                                                                    </graphic>
+                                                                    <padding>
+                                                                        <Insets left="15.0" right="15.0"/>
+                                                                    </padding>
+                                                                    <HBox.margin>
+                                                                        <Insets bottom="2.0" top="3.0"/>
+                                                                    </HBox.margin>
+                                                                </JFXButton>
+                                                            </children>
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"/>
+                                                            </VBox.margin>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="MovmentLogTab" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-font-family: System;"
+                     text="Expire Date Alert">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <SplitPane dividerPositions="0.5" AnchorPane.bottomAnchor="0.0"
+                                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                           AnchorPane.topAnchor="3.0">
+                                    <items>
+                                        <AnchorPane maxWidth="500.0" minWidth="500.0" prefWidth="500.0">
+                                            <children>
+                                                <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT"
+                                                      stylesheets="@../style/Style.css" AnchorPane.bottomAnchor="0.0"
+                                                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                                      AnchorPane.topAnchor="0.0">
+                                                    <children>
+                                                        <Label alignment="CENTER" contentDisplay="CENTER"
+                                                               style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                                                               text="In Store Products"/>
+                                                        <JFXTabPane prefWidth="500.0"/>
+                                                        <Separator>
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0"/>
+                                                            </VBox.margin>
+                                                        </Separator>
+                                                        <TableView fx:id="productTable31"
+                                                                   onMouseClicked="#getSelectedItem"
+                                                                   style="-fx-font-size: 14;"
+                                                                   tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                                                            <columns>
+                                                                <TableColumn fx:id="productId31" editable="false"
+                                                                             prefWidth="75.0" resizable="false"
+                                                                             sortable="false" text="id"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productSelector31" maxWidth="40.0"
+                                                                             minWidth="40.0" prefWidth="40.0"
+                                                                             resizable="false" sortable="false"
+                                                                             text="sel" visible="false"/>
+                                                                <TableColumn fx:id="productNumber31" maxWidth="50.0"
+                                                                             minWidth="50.0" prefWidth="50.0"
+                                                                             resizable="false" text="no."/>
+                                                                <TableColumn fx:id="productBatch31" minWidth="100.0"
+                                                                             prefWidth="75.0" sortable="false"
+                                                                             text="Batch number"/>
+                                                                <TableColumn fx:id="productName31" maxWidth="260.0"
+                                                                             minWidth="260.0" prefWidth="260.0"
+                                                                             text="Name"/>
+                                                                <TableColumn fx:id="productAmount31" prefWidth="75.0"
+                                                                             text="Amount"/>
+                                                                <TableColumn fx:id="productType31" maxWidth="-1.0"
+                                                                             minWidth="100.0" prefWidth="-1.0"
+                                                                             text="Type/Unit" visible="false"/>
+                                                                <TableColumn fx:id="productSupplier31" minWidth="100.0"
+                                                                             prefWidth="75.0" sortable="false"
+                                                                             text="Supplier" visible="false"/>
+                                                                <TableColumn fx:id="productSelling31" prefWidth="75.0"
+                                                                             text="Selling price" visible="false"/>
+                                                                <TableColumn fx:id="productPaymentType31"
+                                                                             minWidth="100.0" prefWidth="75.0"
+                                                                             text="Payment Type" visible="false"/>
+                                                                <TableColumn fx:id="productExDate31" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Expire-Date"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productModel31" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Model"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productBrand31" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Brand"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productCost31" prefWidth="75.0"
+                                                                             text="Cost price" visible="false"/>
+                                                                <TableColumn fx:id="productAddedDate31" minWidth="100.0"
+                                                                             prefWidth="75.0" text="added Date"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productCheqNo31" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Cheq number"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productInvoiceNo31" minWidth="100.0"
+                                                                             prefWidth="75.0" text="invoice Number"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productCreatedBy31" minWidth="100.0"
+                                                                             prefWidth="75.0" text="created By"
+                                                                             visible="false"/>
+                                                            </columns>
+                                                            <VBox.margin>
+                                                                <Insets left="7.0"/>
+                                                            </VBox.margin>
+                                                            <padding>
+                                                                <Insets left="7.0" right="5.0"/>
+                                                            </padding>
+                                                        </TableView>
+                                                        <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="3.0">
+                                                            <children>
+                                                                <JFXButton fx:id="next31" alignment="CENTER"
+                                                                           contentDisplay="GRAPHIC_ONLY"
+                                                                           graphicTextGap="10.0" onAction="#nextload"
+                                                                           ripplerFill="#756666"
+                                                                           style="-fx-background-color: #00C0EF;"
+                                                                           text="." textFill="WHITE">
+                                                                    <font>
+                                                                        <Font size="1.0"/>
+                                                                    </font>
+                                                                    <graphic>
+                                                                        <FontAwesomeIconView fill="#fcf8f8"
+                                                                                             glyphName="ANGLE_RIGHT"
+                                                                                             size="30"
+                                                                                             strokeLineCap="ROUND"
+                                                                                             strokeLineJoin="ROUND"
+                                                                                             strokeType="INSIDE"/>
+                                                                    </graphic>
+                                                                    <padding>
+                                                                        <Insets left="15.0" right="15.0"/>
+                                                                    </padding>
+                                                                    <HBox.margin>
+                                                                        <Insets bottom="2.0" top="3.0"/>
+                                                                    </HBox.margin>
+                                                                </JFXButton>
+                                                                <Label fx:id="itemPage31" alignment="CENTER"
+                                                                       minWidth="70.0"
+                                                                       style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                                                                       text="123">
+                                                                    <padding>
+                                                                        <Insets top="5.0"/>
+                                                                    </padding>
+                                                                    <HBox.margin>
+                                                                        <Insets left="3.0" right="3.0"/>
+                                                                    </HBox.margin>
+                                                                </Label>
+                                                                <JFXButton fx:id="back31" alignment="CENTER"
+                                                                           contentDisplay="GRAPHIC_ONLY"
+                                                                           graphicTextGap="10.0" onAction="#backpage"
+                                                                           ripplerFill="#756666"
+                                                                           style="-fx-background-color: #00C0EF;"
+                                                                           text="." textFill="WHITE">
+                                                                    <font>
+                                                                        <Font size="1.0"/>
+                                                                    </font>
+                                                                    <graphic>
+                                                                        <FontAwesomeIconView fill="#fcf8f8"
+                                                                                             glyphName="ANGLE_LEFT"
+                                                                                             size="30"
+                                                                                             strokeLineCap="ROUND"
+                                                                                             strokeLineJoin="ROUND"
+                                                                                             strokeType="INSIDE"/>
+                                                                    </graphic>
+                                                                    <padding>
+                                                                        <Insets left="15.0" right="15.0"/>
+                                                                    </padding>
+                                                                    <HBox.margin>
+                                                                        <Insets bottom="2.0" top="3.0"/>
+                                                                    </HBox.margin>
+                                                                </JFXButton>
+                                                            </children>
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"/>
+                                                            </VBox.margin>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane>
+                                            <children>
+                                                <VBox nodeOrientation="LEFT_TO_RIGHT" stylesheets="@../style/Style.css"
+                                                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <children>
+                                                        <Label alignment="CENTER" prefWidth="382.0"
+                                                               style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                                                               text="In Despensce Products"/>
+                                                        <JFXTabPane prefWidth="500.0"/>
+                                                        <Separator>
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0"/>
+                                                            </VBox.margin>
+                                                        </Separator>
+                                                        <TableView fx:id="productTable41"
+                                                                   onMouseClicked="#getSelectedItem"
+                                                                   style="-fx-font-size: 14;"
+                                                                   tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                                                            <columns>
+                                                                <TableColumn fx:id="productId41" editable="false"
+                                                                             prefWidth="75.0" resizable="false"
+                                                                             sortable="false" text="id"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productSelector41" maxWidth="40.0"
+                                                                             minWidth="40.0" prefWidth="40.0"
+                                                                             resizable="false" sortable="false"
+                                                                             text="sel" visible="false"/>
+                                                                <TableColumn fx:id="productNumber41" maxWidth="50.0"
+                                                                             minWidth="50.0" prefWidth="50.0"
+                                                                             resizable="false" text="no."/>
+                                                                <TableColumn fx:id="productBatch41" minWidth="100.0"
+                                                                             prefWidth="75.0" sortable="false"
+                                                                             text="Batch number"/>
+                                                                <TableColumn fx:id="productName41" minWidth="300.0"
+                                                                             prefWidth="300.0" text="Name"/>
+                                                                <TableColumn fx:id="productAmount41" prefWidth="75.0"
+                                                                             text="Amount"/>
+                                                                <TableColumn fx:id="productType41" maxWidth="-1.0"
+                                                                             minWidth="100.0" prefWidth="-1.0"
+                                                                             text="Type/Unit" visible="false"/>
+                                                                <TableColumn fx:id="productSupplier41" minWidth="100.0"
+                                                                             prefWidth="75.0" sortable="false"
+                                                                             text="Supplier" visible="false"/>
+                                                                <TableColumn fx:id="productSelling41" prefWidth="75.0"
+                                                                             text="Selling price" visible="false"/>
+                                                                <TableColumn fx:id="productPaymentType41"
+                                                                             minWidth="100.0" prefWidth="75.0"
+                                                                             text="Payment Type" visible="false"/>
+                                                                <TableColumn fx:id="productExDate41" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Expire-Date"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productModel41" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Model"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productBrand41" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Brand"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productCost41" prefWidth="75.0"
+                                                                             text="Cost price" visible="false"/>
+                                                                <TableColumn fx:id="productAddedDate41" minWidth="100.0"
+                                                                             prefWidth="75.0" text="added Date"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productCheqNo41" minWidth="100.0"
+                                                                             prefWidth="75.0" text="Cheq number"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productInvoiceNo41" minWidth="100.0"
+                                                                             prefWidth="75.0" text="invoice Number"
+                                                                             visible="false"/>
+                                                                <TableColumn fx:id="productCreatedBy41" minWidth="100.0"
+                                                                             prefWidth="75.0" text="created By"
+                                                                             visible="false"/>
+                                                            </columns>
+                                                            <VBox.margin>
+                                                                <Insets left="7.0"/>
+                                                            </VBox.margin>
+                                                            <padding>
+                                                                <Insets left="7.0" right="5.0"/>
+                                                            </padding>
+                                                        </TableView>
+                                                        <HBox nodeOrientation="RIGHT_TO_LEFT" spacing="3.0">
+                                                            <children>
+                                                                <JFXButton fx:id="next41" alignment="CENTER"
+                                                                           contentDisplay="GRAPHIC_ONLY"
+                                                                           graphicTextGap="10.0"
+                                                                           onAction="#nextdespenceload"
+                                                                           ripplerFill="#756666"
+                                                                           style="-fx-background-color: #00C0EF;"
+                                                                           text="." textFill="WHITE">
+                                                                    <font>
+                                                                        <Font size="1.0"/>
+                                                                    </font>
+                                                                    <graphic>
+                                                                        <FontAwesomeIconView fill="#fcf8f8"
+                                                                                             glyphName="ANGLE_RIGHT"
+                                                                                             size="30"
+                                                                                             strokeLineCap="ROUND"
+                                                                                             strokeLineJoin="ROUND"
+                                                                                             strokeType="INSIDE"/>
+                                                                    </graphic>
+                                                                    <padding>
+                                                                        <Insets left="15.0" right="15.0"/>
+                                                                    </padding>
+                                                                    <HBox.margin>
+                                                                        <Insets bottom="2.0" top="3.0"/>
+                                                                    </HBox.margin>
+                                                                </JFXButton>
+                                                                <Label fx:id="itemPage41" alignment="CENTER"
+                                                                       minWidth="70.0"
+                                                                       style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                                                                       text="123">
+                                                                    <padding>
+                                                                        <Insets top="5.0"/>
+                                                                    </padding>
+                                                                    <HBox.margin>
+                                                                        <Insets left="3.0" right="3.0"/>
+                                                                    </HBox.margin>
+                                                                </Label>
+                                                                <JFXButton fx:id="back41" alignment="CENTER"
+                                                                           contentDisplay="GRAPHIC_ONLY"
+                                                                           graphicTextGap="10.0"
+                                                                           onAction="#backdespencepage"
+                                                                           ripplerFill="#756666"
+                                                                           style="-fx-background-color: #00C0EF;"
+                                                                           text="." textFill="WHITE">
+                                                                    <font>
+                                                                        <Font size="1.0"/>
+                                                                    </font>
+                                                                    <graphic>
+                                                                        <FontAwesomeIconView fill="#fcf8f8"
+                                                                                             glyphName="ANGLE_LEFT"
+                                                                                             size="30"
+                                                                                             strokeLineCap="ROUND"
+                                                                                             strokeLineJoin="ROUND"
+                                                                                             strokeType="INSIDE"/>
+                                                                    </graphic>
+                                                                    <padding>
+                                                                        <Insets left="15.0" right="15.0"/>
+                                                                    </padding>
+                                                                    <HBox.margin>
+                                                                        <Insets bottom="2.0" top="3.0"/>
+                                                                    </HBox.margin>
+                                                                </JFXButton>
+                                                            </children>
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0"/>
+                                                            </VBox.margin>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

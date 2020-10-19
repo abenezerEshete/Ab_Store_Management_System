@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.validation.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="AnchorPane" prefHeight="550.0"
+            xmlns="http://javafx.com/javafx/8.0.171"
+            fx:controller="controller.EditPurchase">
+    <children>
+        <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox style="-fx-background-color: #FBFCFC;">
+                    <children>
+                        <HBox>
+                            <children>
+                                <Label alignment="BOTTOM_LEFT" prefWidth="382.0"
+                                       style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #7387A8;"
+                                       text="Add Product">
+                                    <padding>
+                                        <Insets top="30.0"/>
+                                    </padding>
+                                </Label>
+                                <Label fx:id="notification" alignment="CENTER" prefWidth="382.0"
+                                       style="-fx-font-size: 16; -fx-text-fill: red;">
+                                    <padding>
+                                        <Insets top="30.0"/>
+                                    </padding>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Separator prefWidth="200.0">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0"/>
+                            </VBox.margin>
+                        </Separator>
+                        <HBox spacing="30.0">
+                            <children>
+                                <GridPane style="-fx-border-width: 3; -fx-border-color: #D6EAF8;" vgap="35.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"
+                                                           maxWidth="1.7976931348623157E308" percentWidth="0.0"/>
+                                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"
+                                                           maxWidth="1.7976931348623157E308" percentWidth="0.0"/>
+                                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" percentWidth="0.0"/>
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                    </rowConstraints>
+                                    <children>
+                                        <HBox fx:id="nameHbox" spacing="10.0">
+                                            <children>
+                                                <Label prefWidth="50.0" style="-fx-font-size: 14;" text="Name ">
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <RequiredFieldValidator fx:id="nameRequiredValidator"
+                                                                        message="This field is required"/>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox prefHeight="30.0" spacing="11.0" GridPane.rowIndex="1">
+                                            <children>
+                                                <Label prefWidth="50.0" style="-fx-font-size: 14;" text="Model">
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <JFXTextField fx:id="model" editable="false" prefWidth="250.0"
+                                                              style="-fx-background-color: #EBF5FB;">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                            <GridPane.margin>
+                                                <Insets/>
+                                            </GridPane.margin>
+                                            <padding>
+                                                <Insets left="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox spacing="11.0" GridPane.columnIndex="2" GridPane.halignment="LEFT"
+                                              GridPane.hgrow="ALWAYS">
+                                            <children>
+                                                <Label alignment="CENTER" prefWidth="50.0" style="-fx-font-size: 14;"
+                                                       text="Brand" HBox.hgrow="ALWAYS">
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <JFXTextField fx:id="brand" editable="false" prefWidth="150.0"
+                                                              style="-fx-background-color: #EBF5FB;">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox spacing="11.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                            <children>
+                                                <Label alignment="CENTER" prefWidth="50.0" style="-fx-font-size: 14;"
+                                                       text="Grade">
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <JFXTextField fx:id="grade" editable="false" prefWidth="150.0"
+                                                              style="-fx-background-color: #EBF5FB;">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox spacing="11.0" GridPane.columnIndex="1">
+                                            <children>
+                                                <Label alignment="CENTER" prefWidth="50.0" style="-fx-font-size: 14;"
+                                                       text="Type" HBox.hgrow="ALWAYS">
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <JFXTextField fx:id="type" editable="false" prefWidth="150.0"
+                                                              style="-fx-background-color: #EBF5FB;">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox spacing="11.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <children>
+                                                <Label alignment="CENTER" prefWidth="50.0" style="-fx-font-size: 14;"
+                                                       text="Size" HBox.hgrow="ALWAYS">
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <JFXTextField fx:id="size" editable="false" prefWidth="150.0"
+                                                              style="-fx-background-color: #EBF5FB;">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox prefHeight="30.0" spacing="11.0" GridPane.rowIndex="2">
+                                            <children>
+                                                <Label prefWidth="105.0" style="-fx-font-size: 14;"
+                                                       text="Unit Selling Price">
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <JFXTextField fx:id="unitSellingPrice" editable="false"
+                                                              prefWidth="250.0" style="-fx-background-color: #EBF5FB;">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                                <DoubleValidator fx:id="sellingPriceNumberValidator"/>
+                                                <RequiredFieldValidator fx:id="sellingPriceRequierValidator"
+                                                                        message="This field is required"/>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox prefHeight="30.0" spacing="11.0" GridPane.rowIndex="4">
+                                            <children>
+                                                <Label prefWidth="100.0" style="-fx-font-size: 14;" text="Amount">
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <JFXTextField fx:id="amount" prefWidth="100.0"
+                                                              style="-fx-background-color: #EBF5FB;">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                                <RequiredFieldValidator fx:id="aountRequierValidator"
+                                                                        message="This field is required"/>
+                                                <DoubleValidator fx:id="amountNumberValidator"/>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox prefHeight="30.0" spacing="11.0" GridPane.columnIndex="1"
+                                              GridPane.rowIndex="4">
+                                            <children>
+                                                <Label prefWidth="105.0" style="-fx-font-size: 14;"
+                                                       text="Unit Cost Price">
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <JFXTextField fx:id="unitCostPrice" onKeyReleased="#culculateTotal"
+                                                              prefWidth="100.0" style="-fx-background-color: #EBF5FB;">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                                <RequiredFieldValidator fx:id="unitCostPriceRequierValidator"
+                                                                        message="This field is required"/>
+                                                <DoubleValidator fx:id="unitCostNumberValidator"/>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox prefHeight="30.0" spacing="11.0" GridPane.columnIndex="2"
+                                              GridPane.rowIndex="4">
+                                            <children>
+                                                <Label prefWidth="100.0" style="-fx-font-size: 14;"
+                                                       text="Total Cost price">
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <JFXTextField fx:id="totalCostPrice" prefWidth="100.0"
+                                                              style="-fx-background-color: #EBF5FB;">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                                <RequiredFieldValidator fx:id="totalCostRequierValidator"
+                                                                        message="This field is required"/>
+                                                <DoubleValidator fx:id="totalCostNumberValidator"/>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox fx:id="supplierHbox" spacing="10.0" GridPane.rowIndex="3">
+                                            <children>
+                                                <Label prefWidth="105.0" style="-fx-font-size: 14;" text="Supplier">
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox prefHeight="30.0" spacing="11.0" GridPane.columnIndex="1"
+                                              GridPane.rowIndex="3">
+                                            <children>
+                                                <Label prefWidth="100.0" style="-fx-font-size: 14;"
+                                                       text="Invoice Number">
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+                                                </Label>
+                                                <JFXTextField fx:id="invoiceNumber" prefWidth="100.0"
+                                                              style="-fx-background-color: #EBF5FB;">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                                <RequiredFieldValidator fx:id="aountRequierValidator1"
+                                                                        message="This field is required"/>
+                                                <DoubleValidator fx:id="amountNumberValidator1"/>
+                                            </children>
+                                            <padding>
+                                                <Insets left="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="15.0" right="10.0" top="15.0"/>
+                                    </padding>
+                                </GridPane>
+                            </children>
+                            <VBox.margin>
+                                <Insets/>
+                            </VBox.margin>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT">
+                            <children>
+                                <ButtonBar fx:id="buttonList" buttonMinWidth="0.0">
+                                    <buttons>
+                                        <JFXButton fx:id="cancelButton" buttonType="RAISED" onAction="#closeWindows"
+                                                   prefWidth="100.0" ripplerFill="#a2c2f6"
+                                                   style="-fx-background-color: #FFF;" text="Cancel" textFill="#2d76eb">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                            <padding>
+                                                <Insets bottom="8.0" left="5.0" right="5.0" top="8.0"/>
+                                            </padding>
+                                        </JFXButton>
+                                        <JFXButton fx:id="delete" buttonType="RAISED" graphicTextGap="5.0"
+                                                   onAction="#delete" prefHeight="33.0" prefWidth="100.0"
+                                                   ripplerFill="#a2c2f6" style="-fx-background-color: #EC7063;"
+                                                   text="Delete" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                            <padding>
+                                                <Insets bottom="8.0" left="5.0" right="5.0" top="8.0"/>
+                                            </padding>
+                                        </JFXButton>
+                                        <JFXButton fx:id="saveButton" buttonType="RAISED" onAction="#saveData"
+                                                   prefWidth="100.0" ripplerFill="#a2c2f6"
+                                                   style="-fx-background-color: #2d76eb;" text="Save" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                            <padding>
+                                                <Insets bottom="8.0" left="5.0" right="5.0" top="8.0"/>
+                                            </padding>
+                                        </JFXButton>
+                                    </buttons>
+                                    <HBox.margin>
+                                        <Insets bottom="10.0"/>
+                                    </HBox.margin>
+                                </ButtonBar>
+                            </children>
+                            <padding>
+                                <Insets right="20.0"/>
+                            </padding>
+                            <VBox.margin>
+                                <Insets top="20.0"/>
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                    <HBox.margin>
+                        <Insets top="5.0"/>
+                    </HBox.margin>
+                    <padding>
+                        <Insets left="10.0"/>
+                    </padding>
+                </VBox>
+            </children>
+        </HBox>
+        <Separator prefWidth="600.0" style="-fx-border-width: 0 0 3 0; -fx-border-color: #2d76eb;"
+                   AnchorPane.bottomAnchor="0.0"/>
+        <Label fx:id="totalPriceFDsplay" alignment="BOTTOM_LEFT"
+               style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: #2874A6;"
+               text="Total Price" visible="false" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="2.0">
+            <effect>
+                <DropShadow height="29.9" radius="28.5325" width="86.23"/>
+            </effect>
+            <padding>
+                <Insets bottom="5.0" top="5.0"/>
+            </padding>
+        </Label>
+    </children>
+</AnchorPane>
