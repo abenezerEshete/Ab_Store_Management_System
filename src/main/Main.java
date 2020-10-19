@@ -19,7 +19,9 @@ import java.io.File;
 
 public class Main extends Application {
     private static final SessionFactory ourSessionFactory;
-
+//hiii the the trial git branch
+    //checking the change is working
+    // thanks
     static {
         try {
             Configuration configuration = new Configuration();
